@@ -111,7 +111,8 @@ class ContactData extends Component {
         axios.post('/orders.json', order)
             .then(response => {
                 this.setState( { loading: false } );
-                this.state.history.push('/');
+                this.props.history.push('/');
+                //redirects but doesn't reset the burger
             })
             .catch(error => {
                 this.setState( { loading: false } );
